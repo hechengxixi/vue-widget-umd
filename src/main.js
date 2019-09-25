@@ -3,8 +3,8 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-function VueWidgetFactory(){
-  var component = new Vue({
+function WidgetFactory(){
+  let component = new Vue({
     render: h => h(App),
   }).$mount();
 
@@ -14,7 +14,7 @@ function VueWidgetFactory(){
 const isVueWidget = true;
 
 export {
-    VueWidgetFactory,
+    WidgetFactory,
     isVueWidget
 };
 
