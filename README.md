@@ -1,38 +1,26 @@
 
-# Summary
-### 使用Vue-CLI创建的default项目
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the example for development.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the example for production to the `build` folder.\
 
 
-# Webpack config (详见vue.config.js)
-### 1. publicPath需要注意配置(如：http://127.0.0.1:5501/vue-widget/dist/)；
-###  2. 去掉filename hash（不允许每build一次文件名就不同）；
+### `npm run dist`
 
-
-# Output 
-### {
-###    VueWidgetFactory[Function]:
-####           @return vue component
-###    isVueWidget[Boolean]:是否为Vue组件
-#####        @default true
-### }
-
-    eg.
-    main.js
-    function VueWidgetFactory(){
-        var component = new Vue({
-            render: h => h(App),
-        }).$mount();
-
-        return component;
-    }
-
-    const isVueWidget = true;
-
-    export {
-        VueWidgetFactory,
-        isVueWidget
-    };
-
-# Build
-### npm run build
-    
+Builds the umd library for production and development to the `dist` folder.\
