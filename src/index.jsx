@@ -1,5 +1,7 @@
 /* eslint-disable no-throw-literal */
+import React from 'react';
 import * as CPONS from './components'
+const {NoAuth} = CPONS;
 const XnUI = {};
 
 const handleErr = (err) => {
@@ -31,7 +33,7 @@ XnUI.install = (app, options) => {
         Object.keys(CPONS).map(cponName => {
             console.log(cponName);
             // 本地调试添加
-            window.AUTH_MAP['Button']={
+            window.AUTH_MAP[cponName]={
                 get: true,
                 post: true,
                 put: true,
@@ -45,7 +47,7 @@ XnUI.install = (app, options) => {
                 // 如果没有权限，不管使用了没，注册的时候会全部报错
                 // console.error(`xn-AuthError: 该密钥没有 ${cponName} 权限`)
                 // 如果组件没有权限 统一显示 NoAuth 组件
-                // CPONS[cponName] && app.component(cponName, <NoAuth cponname={cponName} />)
+                CPONS[cponName] && (XnUI[cponName] = function NoAuthHOC(){return (<NoAuth cponname={cponName} />)});
             }
         })
 

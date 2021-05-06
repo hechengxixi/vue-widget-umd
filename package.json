@@ -10,8 +10,8 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "antd": "^4.5.2",
     "@typescript-eslint/parser": "^4.5.0",
+    "antd": "^4.5.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -50,6 +50,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
@@ -75,6 +76,13 @@
     "test": "node scripts/test.js",
     "lib": "node scripts/lib.js"
   },
+  "main": "dist/xncomponents-react-demo.min.js",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "dist/*"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",

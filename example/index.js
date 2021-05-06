@@ -22,7 +22,8 @@ import reportWebVitals from './reportWebVitals';
 XnUI.install();
 ReactDOM.render(
   <React.StrictMode>
-    <XnUI.Button name='test2' />
+    {/* <XnUI.Button name='test2' /> */}
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
