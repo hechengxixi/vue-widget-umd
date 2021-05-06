@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/button/style/index.less"],"names":[],"mappings":"AACA,gBAEQ,UAAA,CAIA,iBALR","file":"xncomponents-react-demo.min.css","sourcesContent":["\n.hello{\n    .ant-btn{\n        color: blue;\n    }\n\n    .ant-btn{\n        border-color: blue;\n    }\n}\n"]}

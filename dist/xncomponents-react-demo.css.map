@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/button/style/index.less"],"names":[],"mappings":"AACA;EAEQ;AADR;AADA;EAMQ;AAFR","file":"xncomponents-react-demo.css","sourcesContent":["\n.hello{\n    .ant-btn{\n        color: blue;\n    }\n\n    .ant-btn{\n        border-color: blue;\n    }\n}\n"],"sourceRoot":""}
