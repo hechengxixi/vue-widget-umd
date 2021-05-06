@@ -187,7 +187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./node_modules/react/jsx-runtime.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 // helpers
-function getExclamationMarks(numChars){return Array(numChars+1).join('!');}function Button(_ref){var name=_ref.name,_ref$enthusiasmLevel=_ref.enthusiasmLevel,enthusiasmLevel=_ref$enthusiasmLevel===void 0?1:_ref$enthusiasmLevel;if(enthusiasmLevel<=0){throw new Error('You could be a little more enthusiastic. :DDDDDD');}return/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])("div",{className:"hello",children:[/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])("div",{className:"greeting",children:["Hello ",name+getExclamationMarks(enthusiasmLevel)]}),/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])(antd__WEBPACK_IMPORTED_MODULE_1__["Button"],{className:"button",children:[" ",name," "]})]});}/* harmony default export */ __webpack_exports__["default"] = (Button);
+function getExclamationMarks(numChars){return Array(numChars+1).join('!');}function Button(_ref){var name=_ref.name,_ref$enthusiasmLevel=_ref.enthusiasmLevel,enthusiasmLevel=_ref$enthusiasmLevel===void 0?1:_ref$enthusiasmLevel;if(enthusiasmLevel<=0){throw new Error('You could be a little more enthusiastic. :DDDDDD');}return/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])("div",{className:"hello",children:[/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])("div",{className:"greeting",children:["Hello ",name+getExclamationMarks(enthusiasmLevel)]}),/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__["jsxs"])(antd__WEBPACK_IMPORTED_MODULE_1__["Button"],{className:"button",children:[" ",name," 33"]})]});}/* harmony default export */ __webpack_exports__["default"] = (Button);
 
 /***/ }),
 
@@ -206,25 +206,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/components/button/index.jsx");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return _button__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
+/* harmony import */ var _noAuth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/components/noAuth/index.jsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NoAuth", function() { return _noAuth__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
 
 
 /***/ }),
 
-/***/ "./src/index.js":
+/***/ "./src/components/noAuth/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/components/index.jsx");
-var XnUI={};var handleErr=function handleErr(err){if(typeof err==='string')console.error(err);else console.error("xn-".concat(err.type||'',"Error: ").concat(err.msg));};XnUI.registerComponentUrl=function(url){if(window.registerComponentUrl){// 全局添加 auth
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+function NoAuth(_ref){var cponname=_ref.cponname;return/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__["jsxs"])("div",{children:["\u6CA1\u6709 ",cponname," \u6743\u9650"]});}/* harmony default export */ __webpack_exports__["default"] = (NoAuth);
+
+/***/ }),
+
+/***/ "./src/index.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/components/index.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* eslint-disable no-throw-literal */var NoAuth=_components__WEBPACK_IMPORTED_MODULE_1__["NoAuth"];var XnUI={};var handleErr=function handleErr(err){if(typeof err==='string')console.error(err);else console.error("xn-".concat(err.type||'',"Error: ").concat(err.msg));};XnUI.registerComponentUrl=function(url){if(window.registerComponentUrl){// 全局添加 auth
 // eslint-disable-next-line no-undef
-return registerComponentUrl(url).catch(function(){handleErr({type:'AuthError',msg:'请检查服务与密钥！!'});});}else{handleErr({type:'Global',msg:'未引入presets!'});}return Promise.reject();};XnUI.install=function(app,options){try{if(!window.AUTH_MAP)throw{type:'Global',msg:'未获取权限！'};Object.keys(_components__WEBPACK_IMPORTED_MODULE_0__).map(function(cponName){// 本地调试添加
-window.AUTH_MAP['XnButton']={get:true,post:true,put:true,delete:true};window.AUTH_MAP['filepreview']={get:true,post:true,put:true,delete:true};window.AUTH_MAP['fieldgroup']={get:true,post:true,put:true,delete:true};if(!window.checkComponentAuth)throw{type:'Global',msg:'未引入presets!'};// eslint-disable-next-line no-undef
-if(checkComponentAuth(cponName))_components__WEBPACK_IMPORTED_MODULE_0__[cponName]&&app.component(cponName);else{// 如果没有权限，不管使用了没，注册的时候会全部报错
+return registerComponentUrl(url).catch(function(){handleErr({type:'AuthError',msg:'请检查服务与密钥！!'});throw Error();});}else{handleErr({type:'Global',msg:'未引入presets!'});}return Promise.reject();};XnUI.install=function(app,options){try{if(!window.AUTH_MAP)throw{type:'Global',msg:'未获取权限！'};// eslint-disable-next-line array-callback-return
+Object.keys(_components__WEBPACK_IMPORTED_MODULE_1__).map(function(cponName){console.log(cponName);// 本地调试添加
+window.AUTH_MAP[cponName]={get:true,post:true,put:true,delete:true};if(!window.checkComponentAuth)throw{type:'Global',msg:'未引入presets!'};// eslint-disable-next-line no-undef
+if(checkComponentAuth(cponName))_components__WEBPACK_IMPORTED_MODULE_1__[cponName]&&(XnUI[cponName]=_components__WEBPACK_IMPORTED_MODULE_1__[cponName]);else{// 如果没有权限，不管使用了没，注册的时候会全部报错
 // console.error(`xn-AuthError: 该密钥没有 ${cponName} 权限`)
 // 如果组件没有权限 统一显示 NoAuth 组件
-// CPONS[cponName] && app.component(cponName, <NoAuth cponname={cponName} />)
-}});}catch(err){handleErr(err);}};// 需要加载权限，不能 auto install
+_components__WEBPACK_IMPORTED_MODULE_1__[cponName]&&(XnUI[cponName]=function NoAuthHOC(){return/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__["jsx"])(NoAuth,{cponname:cponName});});}});}catch(err){handleErr(err);}};// 需要加载权限，不能 auto install
 // if (typeof window !== 'undefined' && window.Vue) {
 //     install(window.Vue);
 // }
@@ -235,7 +255,7 @@ if(checkComponentAuth(cponName))_components__WEBPACK_IMPORTED_MODULE_0__[cponNam
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./src/index.js");
+module.exports = __webpack_require__("./src/index.jsx");
 
 
 /***/ }),
